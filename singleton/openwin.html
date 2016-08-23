@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+
+  .layer{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.6;
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: 200px;
+  }
+  </style>
+</head>
+<body>
+  <a href="javascript:;" onclick="openwin()">登录</a>
+  </br></br></br></br>
+  <a href="javascript:;" onclick="openwin()">评论</a>
+  </br></br></br></br>
+  <a href="javascript:;" onclick="openwin()">发表</a>
+  <script src="login_win.js" charset="utf-8"></script>
+  <script>
+    function openwin(){
+      var loginWin = LoginWinSinhleton.getInstance();
+      loginWin.show();
+    }
+  </script>
+</body>
+</html>

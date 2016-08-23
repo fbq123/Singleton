@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    .layer{
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0.6;
+      background-color: #000;
+      color: #fff;
+      font-size: 30px;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      text-align: center;
+      line-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <button id="loginBtn">登录</button>
+  <script>
+    var createLoginLayer = (function(){
+      var div;
+      return function(){
+        if(!div) {
+          div = document.createElement('div');
+          div.className = "layer";
+          div.innerHTML = '我是登录浮窗';
+          div.style.display = 'none';
+          document.body.appendChild(div);
+        }
+        return div;
+      }
+    })();
+
+    // var oDiv =document.createElement('div');
+    // oDiv.className = "layer";
+    // oDiv.innerHTML = '我是登录浮窗';
+    // oDiv.style.display = 'none';
+    // document.body.appendChild(oDiv);
+    // return oDiv;
+    document.getElementById('loginBtn').onclick = function(){
+      var  loginLayer = createLoginLayer();
+      loginLayer.style.display = 'block';
+      // loginLayer.getInstance = function(){
+      //   if(!this.className) {
+      //     this.className = new createLoginLayer();
+      //   }
+      //   return this.className;
+      // }
+    }
+  </script>
+</body>
+</html>
